@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TallerInteligente</string>
+    <string name="registrar">REGISTRAR</string>
+    <string name="volver">Volver</string>
+    <string name="dni_nie">DNI || NIE</string>
+    <string name="apellido">Apellido</string>
+    <string name="nombre">Nombre</string>
+    <string name="correo">Correo</string>
+    <string name="telefono">Teléfono</string>
+</resources>

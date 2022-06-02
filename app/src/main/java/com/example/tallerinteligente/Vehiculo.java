@@ -1,7 +1,7 @@
 package com.example.tallerinteligente;
 
 public class Vehiculo {
-    String _marca;
+   //String _marca;
     String _modelo;
     String _estado;
     String _matricula;
@@ -10,16 +10,16 @@ public class Vehiculo {
 
     }
 
-    public Vehiculo(String Marca, String Modelo, String Estado, String Matricula){
-        _marca = Marca;
+    public Vehiculo(/*String Marca,*/ String Modelo, String Estado, String Matricula){
+        //_marca = Marca;
         _modelo = Modelo;
         _estado = Estado;
         _matricula = Matricula;
     }
 
-    public String get_marca() {
+   /* public String get_marca() {
         return _marca;
-    }
+    }*/
 
     public String get_estado() {
         return _estado;
@@ -37,9 +37,9 @@ public class Vehiculo {
         this._estado = _estado;
     }
 
-    public void set_marca(String _marca) {
+    /*public void set_marca(String _marca) {
         this._marca = _marca;
-    }
+    }*/
 
     public void set_matricula(String _matricula) {
         this._matricula = _matricula;

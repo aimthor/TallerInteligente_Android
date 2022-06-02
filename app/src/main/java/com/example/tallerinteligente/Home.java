@@ -5,13 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.nfc.Tag;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Adapter;
-import android.widget.LinearLayout;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -56,12 +51,15 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
 
         rv.setAdapter(adapter);
 
+        String ruta = "usuarios/users/"+uid+"/vehiculos";
 
-        database.getReference("usuario/users/"+uid+"/vehiculos").addValueEventListener(new ValueEventListener() {
+        database.getReference(ruta).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot datasnapshot) {
                 vehiculos.removeAll(vehiculos);
-                for (DataSnapshot snapshot: datasnapshot.getChildren()){
+                for (DataSnapshot snapshot:
+                     datasnapshot.getChildren()) {
+
                     Vehiculo vehiculo = snapshot.getValue(Vehiculo.class);
                     vehiculos.add(vehiculo);
                 }

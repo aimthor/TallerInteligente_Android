@@ -36,7 +36,7 @@ public class AdaptadorVehiculo extends RecyclerView.Adapter<AdaptadorVehiculo.Ve
         holder.txtModelo.setText(vehiculo.get_modelo());
         holder.txtEstado.setText(vehiculo.get_estado());
         holder.txtMatricula.setText(vehiculo.get_matricula());
-        holder.setImgMarca(vehiculo.get_marca());
+       // holder.setImgMarca(vehiculo.get_marca());
     }
 
     @Override
@@ -54,7 +54,7 @@ public class AdaptadorVehiculo extends RecyclerView.Adapter<AdaptadorVehiculo.Ve
             txtModelo = itemView.findViewById(R.id.txtModelo);
             txtMatricula = itemView.findViewById(R.id.txtMatricula);
             txtEstado = itemView.findViewById(R.id.txtEstado);
-            imgMarca = itemView.findViewById(R.id.imgMarca);
+            //imgMarca = itemView.findViewById(R.id.imgMarca);
 
         }
 

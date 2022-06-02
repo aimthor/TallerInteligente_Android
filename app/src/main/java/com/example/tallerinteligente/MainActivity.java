@@ -91,9 +91,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                nombre = snapshot.child("nombre").getValue().toString();
                             }
                         }
-
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
+                            Toast.makeText(MainActivity.this, error.toString(),Toast.LENGTH_SHORT).show();
                             }
                         });
                     startActivity(new Intent(MainActivity.this, Home.class).putExtra("nombre", nombre).putExtra("correo",correo));

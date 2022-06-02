@@ -26,10 +26,10 @@
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.787"
+        app:layout_constraintHorizontal_bias="0.795"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.848" />
+        app:layout_constraintVertical_bias="0.922" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnVolver"
@@ -41,79 +41,92 @@
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.187"
+        app:layout_constraintHorizontal_bias="0.195"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.848" />
+        app:layout_constraintVertical_bias="0.922" />
 
     <EditText
         android:id="@+id/txtNombre"
-        android:layout_width="258dp"
-        android:layout_height="43dp"
+        android:layout_width="253dp"
+        android:layout_height="52dp"
         android:ems="10"
+        android:hint="@string/nombre"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.385"
-        android:hint="@string/nombre"/>
+        app:layout_constraintVertical_bias="0.39" />
 
     <EditText
         android:id="@+id/txtApellido"
-        android:layout_width="258dp"
-        android:layout_height="43dp"
+        android:layout_width="253dp"
+        android:layout_height="52dp"
         android:ems="10"
         android:hint="@string/apellido"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.475" />
+        app:layout_constraintVertical_bias="0.477" />
 
     <EditText
         android:id="@+id/txtDNI"
-        android:layout_width="258dp"
-        android:layout_height="43dp"
+        android:layout_width="253dp"
+        android:layout_height="52dp"
         android:ems="10"
         android:hint="@string/dni_nie"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.559" />
+        app:layout_constraintVertical_bias="0.565" />
 
     <EditText
         android:id="@+id/txtCorreo"
-        android:layout_width="258dp"
-        android:layout_height="43dp"
+        android:layout_width="253dp"
+        android:layout_height="52dp"
         android:ems="10"
         android:hint="@string/correo"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.642" />
+        app:layout_constraintVertical_bias="0.739" />
 
     <EditText
         android:id="@+id/txtTelefono"
-        android:layout_width="258dp"
-        android:layout_height="43dp"
+        android:layout_width="253dp"
+        android:layout_height="52dp"
         android:ems="10"
         android:hint="@string/telefono"
         android:inputType="phone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.731" />
+        app:layout_constraintVertical_bias="0.652" />
+
+    <EditText
+        android:id="@+id/txtContrasena"
+        android:layout_width="253dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:hint="@string/contrasena"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.827" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

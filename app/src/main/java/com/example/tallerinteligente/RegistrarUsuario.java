@@ -1,5 +1,6 @@
 package com.example.tallerinteligente;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -41,7 +43,10 @@ public class RegistrarUsuario extends AppCompatActivity implements View.OnClickL
     private String contrasena ="";
 
     FirebaseAuth mAuth;
+    FirebaseDatabase database;
     DatabaseReference mDatabase;
+
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -49,7 +54,8 @@ public class RegistrarUsuario extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.layout_registro_usuario);
 
         mAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+        database = FirebaseDatabase.getInstance();
+        mDatabase = database.getReference("usuarios");
 
         txtNombre = findViewById(R.id.txtNombre);
         txtApellido = findViewById(R.id.txtApellido);
@@ -62,6 +68,8 @@ public class RegistrarUsuario extends AppCompatActivity implements View.OnClickL
         btnVolver = findViewById(R.id.btnVolver);
         btnRegistro.setOnClickListener(this);
         btnVolver.setOnClickListener(this);
+
+        progressDialog = new ProgressDialog(this);
     }
 
     @Override
@@ -92,6 +100,7 @@ public class RegistrarUsuario extends AppCompatActivity implements View.OnClickL
                 break;
 
             case R.id.btnVolver:
+
                 break;
         }
     }
@@ -111,16 +120,20 @@ public class RegistrarUsuario extends AppCompatActivity implements View.OnClickL
                     map.put("contrasena",contrasena);
 
                     String id = mAuth.getCurrentUser().getUid();
-                    mDatabase.child("usuarios").child(id).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    mDatabase.child("users").child(id).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task2) {
                             if (task2.isSuccessful()){
-                                startActivity(new Intent(RegistrarUsuario.this, Home.class));
+                                startActivity(new Intent(RegistrarUsuario.this, Home.class).putExtra("nombre", nombre).putExtra("correo",correo));
                                 finish();
                             }
                             else {
+                                if (task2.getException() instanceof FirebaseAuthUserCollisionException){ //Si se presenta una colision por usuario existente
+                                    Toast.makeText(RegistrarUsuario.this, "Usuario Existente", Toast.LENGTH_SHORT).show();
+                                }
                                 Toast.makeText(RegistrarUsuario.this, R.string.error_registro, Toast.LENGTH_SHORT).show();
                             }
+                            progressDialog.dismiss();
                         }
                     });
                 }

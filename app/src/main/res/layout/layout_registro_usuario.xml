@@ -19,7 +19,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnRegistro"
         android:layout_width="128dp"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:background="#009688"
         android:enabled="true"
         android:text="@string/registrar"
@@ -34,7 +34,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnVolver"
         android:layout_width="129dp"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:background="#60888888"
         android:enabled="true"
         android:text="@string/volver"

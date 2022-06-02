@@ -11,5 +11,8 @@
     <string name="contrasena">Contraseña</string>
     <string name="minimo_contrasena">La CONTRASEÑA tiene que tener 6 caracteres como minimo</string>
     <string name="error_registro">No se pudo registrar el usuario</string>
-    <string name="cerrarSesion">Cerrar Sesión</string>
+    <string name="cerrarSesion">Cerrar</string>
+    <string name="modelo">Modelo</string>
+    <string name="matricula">Matrícula</string>
+    <string name="estado">ESTADO</string>
 </resources>

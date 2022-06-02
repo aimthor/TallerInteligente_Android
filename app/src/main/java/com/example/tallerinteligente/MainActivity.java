@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btnLogin, btnRegistro;
     EditText txtUsername, txtPassword;
     private ProgressDialog progressDialog;
-    String nombre = "";
 
     //Declaro un objeto de firebaseAuth
     private FirebaseAuth mAuth;
@@ -84,26 +83,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    database.child("usuarios").child("users").child(mAuth.getUid()).addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if (snapshot.exists()) {
-                               nombre = snapshot.child("nombre").getValue().toString();
-                            }
-                        }
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-                            Toast.makeText(MainActivity.this, error.toString(),Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                    startActivity(new Intent(MainActivity.this, Home.class).putExtra("nombre", nombre).putExtra("correo",correo));
+                    startActivity(new Intent(MainActivity.this, Home.class).putExtra("Correo", correo).putExtra("uid",mAuth.getUid()));
                     finish();
                 }
                 else {
-                    if (task.getException() instanceof FirebaseAuthUserCollisionException){ //Si se presenta una colision por usuario existente
-                        Toast.makeText(MainActivity.this, "Usuario Existente", Toast.LENGTH_SHORT).show();
-                    }
-                    Toast.makeText(MainActivity.this, R.string.error_registro, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Usuario o Contraseña incorrectos", Toast.LENGTH_SHORT).show();
                 }
                 progressDialog.dismiss();
             }
